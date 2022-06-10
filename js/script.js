@@ -1,14 +1,14 @@
 function compute(){
-    VAT_SALES = parseFloat(document.getElementById("vat_sales").value)
-    VAT_EXEMPT = parseFloat(document.getElementById("vat_exempt").value)
-    VAT_RATE = parseFloat(document.getElementById("vat_rate").value)
-    EWT_RATE = parseFloat(document.getElementById("ewt_rate").value)
+    var VAT_SALES = parseFloat(document.getElementById("vat_sales").value)
+    var VAT_EXEMPT = parseFloat(document.getElementById("vat_exempt").value)
+    var VAT_RATE = parseFloat(document.getElementById("vat_rate").value)
+    var EWT_RATE = parseFloat(document.getElementById("ewt_rate").value)
 
-    VATABLE = VAT_SALES / 1 + VAT_RATE/100
-    VAT_AMOUNT = VATABLE * VAT_RATE/100
-    NET_OF_VAT = VATABLE + VAT_EXEMPT
-    EWT_AMOUNT = (NET_OF_VAT * EWT_RATE) / 100
-    TOTAL_AMOUNT_DUE = VAT_SALES + VAT_EXEMPT - EWT_AMOUNT
+    var VATABLE = VAT_SALES / (1 + VAT_RATE/100)
+    var VAT_AMOUNT = VATABLE * (VAT_RATE/100)
+    var NET_OF_VAT = VATABLE + VAT_EXEMPT
+    var EWT_AMOUNT = (NET_OF_VAT * EWT_RATE) / 100
+    var TOTAL_AMOUNT_DUE = VAT_SALES + VAT_EXEMPT - EWT_AMOUNT
 
     document.getElementById("vatable").innerHTML = "VATABLE: <b>" + (Math.round((VATABLE + Number.EPSILON) * 100) / 100) + "</b>"
     document.getElementById("vat_amount").innerHTML = "VAT AMOUNT: <b>" + (Math.round((VAT_AMOUNT + Number.EPSILON) * 100) / 100)  + "</b>"
