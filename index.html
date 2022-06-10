@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAT/EWT Calculator</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container w-50">
+        <div class="row mt-3">
+            <div class="col">
+                <div class="row w-75 mb-2">
+                    <label for="vat_sales">
+                        VAT SALES
+                    </label>
+                    <input type="number" id="vat_sales" value=0>
+                </div>
+
+                <div class="row w-75 mb-2">
+                    <label for="vat_exempt">
+                        VAT EXEMPT
+                    </label>
+                    <input type="number" id="vat_exempt" value=0>
+                </div>
+
+                <div class="row w-75 mb-2">
+                    <label for="vat_rate">
+                        VAT RATE (%)
+                    </label>
+                    <input type="number" id="vat_rate" value=12>
+                </div>
+
+                <div class="row w-75">
+                    <label for="ewt_rate">
+                        EWT RATE (%)
+                    </label>
+                    <input type="number" id="ewt_rate" value=1>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="row text-primary">
+                    <p id="vatable">VATABLE:</p>
+                </div>
+
+                <div class="row text-primary">
+                    <p id="vat_amount">VAT AMOUNT:</p>
+                </div>
+
+                <div class="row text-primary">
+                    <p id="net_of_vat">NET OF VAT:</p>
+                </div>
+
+                <div class="row text-primary">
+                    <p id="ewt_amount">EWT AMOUNT:</p>
+                </div>
+
+                <div class="row mt-3 text-success">
+                    <h5 id="total_amount_due">TOTAL AMOUNT DUE:</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center mt-5">
+            <button type="button" class="btn btn-danger btn-lg" onclick="compute()">Compute</button>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+</html>
